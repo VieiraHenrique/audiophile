@@ -1,0 +1,72 @@
+.bringing {
+  .container {
+    display: grid;
+    grid-template-areas: "img" "text";
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding-bottom: 125px;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "text img";
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      padding: 0 0 125px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 300px;
+    background: url("/assets/shared/desktop/image-best-gear.jpg");
+    background-size: cover;
+    grid-area: img;
+    border-radius: 10px;
+
+    @media screen and (min-width: 768px) {
+      height: 590px;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    height: 345px;
+    grid-area: text;
+    text-align: center;
+
+    h2 {
+      @include subtitle-mobile;
+      text-transform: uppercase;
+      line-height: 1.3;
+      margin-bottom: 50px;
+
+      span {
+        color: $orange;
+      }
+    }
+
+    p {
+      color: $gray-middle;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    @media screen and (min-width: 768px) {
+      text-align: left;
+      width: 450px;
+
+      h2 {
+        @include subtitle-desktop;
+        font-size: 40px;
+        line-height: 1.2;
+      }
+
+      p {
+        line-height: 1.6;
+        font-size: 15px;
+        width: 440px;
+      }
+    }
+  }
+}
